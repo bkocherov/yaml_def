@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello HR</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css"/>
+  <script src="scripts/site.js"></script>
+</head>
+<body ng-app="helloHr">
+  <div ng-controller="MainCtrl" class="container">
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li ng-class="{ active: isActive(key) }" ng-repeat="(key, value) in tables"><a ng-click="setTable(key)">{{ key}}</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="grid"></div>
+    </div>
+  </div>
+
+</body>
+</html>
